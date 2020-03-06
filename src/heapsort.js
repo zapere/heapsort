@@ -59,7 +59,7 @@ assert.deepEqual(swapWithMaxChild([1, 2, 3], 0, 2), [3, 2, 1])
 assert.deepEqual(swapWithMaxChild([1, 2, 3], 0, 1), [2, 1, 3])
 
 function maxheapify(list, endOfHeap) {
-    if (list.length < 3) {
+    if (list.length < 2) {
         return list
     }
     let parentIndex = getNodeParent(list.length - 1)
@@ -92,12 +92,12 @@ assert.deepEqual(maxheapify([1, 2, 3, 4, 5], 4), [5, 4, 3, 1, 2])
 //      swqp first and last (heap) elements
 //      decrement endOfHeap
 
-function heapsort(list){
-    let endOfHeap = list.length -1
+function heapsort(list) {
+    let endOfHeap = list.length - 1
     while (endOfHeap > 0) {
         maxheapify(list, endOfHeap)
         swap(list, 0, endOfHeap)
-        endOfHeap = endOfHeap -1
+        endOfHeap = endOfHeap - 1
     }
     return list
 }
